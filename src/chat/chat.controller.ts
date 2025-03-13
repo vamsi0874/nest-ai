@@ -20,7 +20,8 @@ export class ChatController {
         // 🔹 GET /chats/:id - Fetch a specific chat
         @Get('chats/:id')
         @UseGuards(JwtAuthGuard)
-        async getChatById(@Req() req, @Param('id') chatId: string) {
+        async getChatById(@Req() req,  @Param() param: { id: string }) {
+            const chatId = param.id
             console.log('chaid',chatId)
             const userId = req.user.userId;
     
