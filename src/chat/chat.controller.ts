@@ -3,7 +3,7 @@ import { ChatService } from './chat.service';
 import { UserChatsService } from '../user-chat/user-chat.service';
 // import { AuthGuard } from '../auth/auth.guard'; 
 import { CreateChatDto, UpdateChatDto } from '../dto/auth.dto';
-import { JwtAuthGuard } from 'src/guards/jwt.guard';
+import { JwtAuthGuard } from '../guards/jwt.guard';
 import { Request } from 'express';
 
 interface User {

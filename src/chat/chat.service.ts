@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { Chat } from '../schemas/Chat.schema';
-import { UpdateChatDto } from 'src/dto/auth.dto';
+import { UpdateChatDto } from '../dto/auth.dto';
 
 
 @Injectable()

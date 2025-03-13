@@ -1,9 +1,9 @@
 import { Body, Controller,  Post, Req,  UseGuards } from '@nestjs/common';
 import {  Signupdto } from '../dto/auth.dto';
 import { AuthService } from './auth.service';
-import { LocalGuard } from 'src/guards/local.guard';
+import { LocalGuard } from '../guards/local.guard';
 import { Request } from 'express';
-import { JwtAuthGuard } from 'src/guards/jwt.guard';
+import { JwtAuthGuard } from '../guards/jwt.guard';
 
 
 

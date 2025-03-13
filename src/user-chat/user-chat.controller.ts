@@ -1,6 +1,6 @@
 import { Controller, Get, HttpException, HttpStatus, Req, UseGuards } from '@nestjs/common';
 import { UserChatsService } from './user-chat.service';
-import { JwtAuthGuard } from 'src/guards/jwt.guard';
+import { JwtAuthGuard } from '../guards/jwt.guard';
 
 @Controller('api')
 export class UserChatController {
