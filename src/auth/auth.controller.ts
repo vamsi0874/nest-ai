@@ -1,7 +1,7 @@
-import { Body, Controller, Get, Post, Req,  UseGuards, UsePipes, ValidationPipe } from '@nestjs/common';
-import { AuthDto, Signupdto } from '../dto/auth.dto';
+import { Body, Controller,  Post, Req,  UseGuards } from '@nestjs/common';
+import {  Signupdto } from '../dto/auth.dto';
 import { AuthService } from './auth.service';
-import { LocalGuard } from 'src/guards/local.gaurd';
+import { LocalGuard } from 'src/guards/local.guard';
 import { Request } from 'express';
 import { JwtAuthGuard } from 'src/guards/jwt.guard';
 
