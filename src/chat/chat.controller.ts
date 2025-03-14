@@ -6,6 +6,7 @@ import { CreateChatDto, UpdateChatDto } from '../dto/auth.dto';
 import { JwtAuthGuard } from '../guards/jwt.guard';
 import { Request } from 'express';
 
+
 interface User {
     userId: string;
 }
@@ -20,13 +21,13 @@ export class ChatController {
         // 🔹 GET /chats/:id - Fetch a specific chat
         @Get('chats/:id')
         @UseGuards(JwtAuthGuard)
-        async getChatById(@Req() req,  @Param() param: { id: string }) {
-            const chatId = param.id
-            console.log('chaid',chatId)
+        async getChatById(@Req() req,  @Param('id') ChatId: string) {
+            
+            
             const userId = req.user.userId;
     
             try {
-                const chat = await this.chatService.findChatById(chatId, userId);
+                const chat = await this.chatService.findChatById(ChatId, userId);
                 if (!chat) {
                     throw new HttpException('Chat not found!', HttpStatus.NOT_FOUND);
                 }

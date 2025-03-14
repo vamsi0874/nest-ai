@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
-import { Model } from 'mongoose';
+import  { Model } from 'mongoose';
 import { Chat } from '../schemas/Chat.schema';
 import { UpdateChatDto } from '../dto/auth.dto';
 
@@ -9,7 +9,7 @@ import { UpdateChatDto } from '../dto/auth.dto';
 export class ChatService {
     constructor(@InjectModel(Chat.name) private chatModel: Model<Chat>) {}
     
-    async findChatById(chatId: string, userId: string) {
+    async findChatById(chatId:string, userId: string) {
         return this.chatModel.findOne({ _id: chatId, userId });
     }
 

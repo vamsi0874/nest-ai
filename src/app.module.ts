@@ -7,6 +7,7 @@ import { UsersModule } from './user/user.module';
 import { AuthModule } from './auth/auth.module';
 import { ChatModule } from './chat/chat.module';
 import { UserChatModule } from './user-chat/user-chat.module';
+import { UploadController } from './upload/upload.controller';
 // import { UploadController } from './upload/upload.controller';
 
 
@@ -22,7 +23,7 @@ import { UserChatModule } from './user-chat/user-chat.module';
     ChatModule,
     UserChatModule,
   ],
-  controllers: [AppController],
+  controllers: [AppController,UploadController],
   providers: [AppService],
 })
 export class AppModule {}

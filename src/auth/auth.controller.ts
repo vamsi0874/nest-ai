@@ -1,9 +1,9 @@
-import { Body, Controller,  Post, Req,  UseGuards } from '@nestjs/common';
+import { Body, Controller,  Get,  Post, Req,  UseGuards, UseInterceptors } from '@nestjs/common';
 import {  Signupdto } from '../dto/auth.dto';
 import { AuthService } from './auth.service';
 import { LocalGuard } from '../guards/local.guard';
 import { Request } from 'express';
-import { JwtAuthGuard } from '../guards/jwt.guard';
+import { UsersInterceptor } from '../interceptors/users.interceptor';
 
 
 
@@ -28,10 +28,4 @@ export class AuthController {
        
     }
 
-    @Post('status')
-    @UseGuards(JwtAuthGuard)
-    status(@Req() req: Request) {
-        console.log('user',req.user)  
-        return req.user  
-    }
 }
